@@ -1,0 +1,109 @@
+.App {
+  text-align: center;
+}
+.title {
+  margin-top: 50px;
+  margin-bottom: 0;
+}
+
+.container {
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+  width: 80vw;
+  margin-top: 50px;
+  height: 450px;
+  max-width: 700px;
+  overflow: hidden;
+}
+img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  border: 2px solid rgb(255, 0, 43);
+}
+
+.quote {
+  width: 400px;
+  margin-top: 0;
+  opacity: 0.8;
+}
+
+.right-quote, h4, span {
+  color: rgb(201, 98, 1);
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.article-title {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.prev, .next {
+  position: absolute;
+  top: 250px;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s linear;
+  padding: 8px 10px;
+  background-color: rgb(255, 166, 0);
+  border: transparent;
+  color: aliceblue;
+  font-size: 20px;
+  box-shadow: 1px 2px 5px rgba(245, 237, 237, 0.8);
+  border-radius: 2px;
+  transition: transform 0.1s ease-in;
+  
+}
+.prev {
+  left: 300px;
+}
+.next {
+  right: 300px;
+}
+.prev:focus, .next:focus {
+  outline: none;
+}
+.prev:hover, .next:hover {
+  background-color: rgb(178, 241, 245);
+  color: rgb(199, 90, 2);;
+}
+.prev:active, .next:active {
+  transform: scale(1);
+}
+article {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.3s linear;
+}
+
+article.active-slide {
+  opacity: 1;
+  transform: translateX(0);
+}
+article.prevSlide {
+  transform: translateX(-100%);
+}
+article.nextSlide {
+  transform: translateX(100%);
+}
+
+
+@media screen and (max-width: 600px){
+  .prev {
+    left: 10px;
+  }
+  .next {
+    right: 10px;
+  }
+}
